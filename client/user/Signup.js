@@ -47,6 +47,7 @@ export default function Signup() {
     name: '',
     password: '',
     email: '',
+    city: '',
     open: false,
     error: ''
   })
@@ -59,6 +60,7 @@ export default function Signup() {
     const user = {
       name: values.name || undefined,
       email: values.email || undefined,
+      city: values.city || undefined,
       password: values.password || undefined
     }
     create(user).then((data) => {
@@ -78,6 +80,7 @@ export default function Signup() {
           </Typography>
           <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
           <TextField id="email" type="email" label="Email" className={classes.textField} value={values.email} onChange={handleChange('email')} margin="normal"/><br/>
+          <TextField id="city" label="City" className={classes.textField} value={values.city} onChange={handleChange('city')} margin="normal"/><br/>
           <TextField id="password" type="password" label="Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal"/>
           <br/> {
             values.error && (<Typography component="p" color="error">
